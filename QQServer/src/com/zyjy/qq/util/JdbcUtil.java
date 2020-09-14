@@ -16,7 +16,7 @@ public class JdbcUtil {
         Properties prop = new Properties();
         Connection conn = null;
         try {
-            prop.load(new BufferedReader(new FileReader("config/jdbc.properties")));
+            prop.load(new BufferedReader(new FileReader("data/jdbc.properties")));
             String driver = prop.getProperty("driver");
             String url = prop.getProperty("url");
             Class.forName(driver);

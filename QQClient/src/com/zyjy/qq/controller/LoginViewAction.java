@@ -48,7 +48,7 @@ public class LoginViewAction implements ActionListener {
                 if (!client.isConnected()) {
                     Properties prop = new Properties();
                     try {
-                        prop.load(new BufferedReader(new FileReader("config/config.properties")));
+                        prop.load(new BufferedReader(new FileReader("data/config.properties")));
                         String host = prop.getProperty("host");
                         String port = prop.getProperty("port");
                         client.connectToServer(host, port);

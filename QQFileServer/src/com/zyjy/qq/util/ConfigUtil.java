@@ -19,7 +19,7 @@ public class ConfigUtil {
         String host = null;
         Properties prop = new Properties();
         try {
-            prop.load(new BufferedReader(new FileReader("config/fileServer.properties")));
+            prop.load(new BufferedReader(new FileReader("data/fileServer.properties")));
             host = prop.getProperty("fileServerHost");
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,7 +36,7 @@ public class ConfigUtil {
         String port = null;
         Properties prop = new Properties();
         try {
-            prop.load(new BufferedReader(new FileReader("config/fileServer.properties")));
+            prop.load(new BufferedReader(new FileReader("data/fileServer.properties")));
             port = prop.getProperty("fileServerPort");
         } catch (IOException e) {
             e.printStackTrace();
