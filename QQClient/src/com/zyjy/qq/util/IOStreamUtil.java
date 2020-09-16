@@ -6,7 +6,7 @@ import java.io.*;
 import java.net.Socket;
 
 public class IOStreamUtil {
-    public static void Transmit(InputStream is, OutputStream os, ChatView cv, long fileSize) throws IOException {
+    public static void Transmit(InputStream is, OutputStream os, ChatView cv) throws IOException {
         BufferedInputStream bis = new BufferedInputStream(is);
         BufferedOutputStream bos = new BufferedOutputStream(os);
         int currentSize = 0;

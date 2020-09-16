@@ -54,7 +54,7 @@ public class RecvFileThread extends Thread {
             socket = serverSocket.accept();
             is = socket.getInputStream();
             os = new FileOutputStream(filePath);
-            IOStreamUtil.Transmit(is, os, chatView, fileSize);
+            IOStreamUtil.Transmit(is, os, chatView);
             JOptionPane.showMessageDialog(chatView, "文件接收成功！");
         } catch (IOException e) {
             e.printStackTrace();

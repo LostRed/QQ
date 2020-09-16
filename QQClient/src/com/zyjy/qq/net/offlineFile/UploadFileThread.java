@@ -49,7 +49,6 @@ public class UploadFileThread extends Thread {
             String jsonString = getFileServerMessage();
             UploadFileDto uploadFileDto = (UploadFileDto) JSONObject.toBean(JsonUtil.toJsonObject(jsonString), UploadFileDto.class);
             String filePath = uploadFileDto.getSendFile().getFileInfo().getFilePath();
-            long fileSize = uploadFileDto.getSendFile().getFileInfo().getFileSize();
             String host = uploadFileDto.getSendFile().getFileInfo().getHost();
             int port = uploadFileDto.getSendFile().getFileInfo().getPort();
             //连接文件服务器接收文件线程
@@ -58,7 +57,7 @@ public class UploadFileThread extends Thread {
             is = new FileInputStream(filePath);
             os = socket.getOutputStream();
             //开始传输
-            IOStreamUtil.Transmit(is, os, chatView, fileSize);
+            IOStreamUtil.Transmit(is, os, chatView);
             socket.shutdownOutput();
             //通知主服务器更改数据库
             AddSendFileDto addSendFileDto = new AddSendFileDto(sendFile);

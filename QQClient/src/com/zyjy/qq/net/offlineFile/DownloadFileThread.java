@@ -64,7 +64,7 @@ public class DownloadFileThread extends Thread {
                 is = socket.getInputStream();
                 os = new FileOutputStream(file);
                 //开始传输
-                IOStreamUtil.Transmit(is, os, chatView, fileSize);
+                IOStreamUtil.Transmit(is, os, chatView);
                 socket.shutdownOutput();
                 //通知主服务器更改数据库
                 DeleteSendFileDto deleteSendFileDto = new DeleteSendFileDto(sendFile);

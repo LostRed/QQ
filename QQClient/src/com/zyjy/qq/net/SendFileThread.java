@@ -44,11 +44,10 @@ public class SendFileThread extends Thread {
             String host = sendFile.getFileInfo().getHost();
             int port = sendFile.getFileInfo().getPort();
             String filePath = sendFile.getFileInfo().getFilePath();
-            long fileSize = sendFile.getFileInfo().getFileSize();
             socket = new Socket(host, port);
             is = new FileInputStream(filePath);
             os = socket.getOutputStream();
-            IOStreamUtil.Transmit(is, os, chatView, fileSize);
+            IOStreamUtil.Transmit(is, os, chatView);
             socket.shutdownOutput();
             JOptionPane.showMessageDialog(chatView, "文件发送成功！");
         } catch (IOException e) {
