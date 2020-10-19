@@ -31,7 +31,7 @@ public class ServiceController {
     /**
      * 获取业务对象
      *
-     * @param type 英文类型
+     * @param type 业务类型
      * @return 业务对象
      */
     public static InService getService(String type) {
